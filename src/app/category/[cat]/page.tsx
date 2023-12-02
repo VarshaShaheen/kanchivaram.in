@@ -1,7 +1,7 @@
 import React from "react";
 import { fetchProductsByCategory } from "../../../../firebase";
 import Footer from "@/app/components/footer";
-
+import Image from 'next/image'
 // Import the CSS file
 import "@/app/utils/css/category.css";
 
@@ -12,7 +12,7 @@ const CategoryPage = async ({ params }) => {
 
     return (
         <div className="p-6">
-            <h1 className="text-5xl text-center capitalize font-ardilla mb-10 mt-5">{category}</h1>
+            <h1 className="text-5xl text-center capitalize font-ardilla mb-12 mt-5">{category}</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {products?.map((product) => (
                     <div key={product.id} className="rounded overflow-hidden bg-white">
@@ -34,6 +34,13 @@ const CategoryPage = async ({ params }) => {
                                 <span className="py-1 text-sm  text-gray-600 serif font-serif uppercase mb-2">
                                     MRP: {product.mrp}
                                 </span>
+                                <Image
+                                    src={"/cart.png"}
+                                    alt={"cart"}
+                                    width={25}
+                                    height={25}
+                                    className="cart-margin mr-0 mb-3"
+                                />
                             </div>
                         </div>
                     </div>
