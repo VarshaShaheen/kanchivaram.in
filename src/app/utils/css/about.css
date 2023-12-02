@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Ardilla';
+    src: url('../../../../public/fonts/Ardilla.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Geraldine';
+    src: url('../../../../public/fonts/Geraldine.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Futura';
+    src: url('/public/fonts/Futura Regular.ttf') format('truetype');
+}
+
+.font-ardilla {
+    font-family: 'Ardilla', sans-serif;
+}
+.font-geraldine{
+    font-family: 'Geraldine', sans-serif;
+}
+.font-futura{
+    font-family: 'Futura',sans-serif;
+}
+
+.reduce-width{
+    width: 70%;
+}
+
+.align-center{
+    align-items: center;
+}
+@media screen and (max-width: 767px) {
+    .reduce-width {
+        width: 100%;
+    }
+}
