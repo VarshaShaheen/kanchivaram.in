@@ -1,0 +1,10 @@
+/* src/app/utils/css/category.css */
+
+@font-face {
+    font-family: 'Ardilla';
+    src: url('../../../../public/fonts/Ardilla.ttf') format('truetype');
+}
+
+.font-ardilla {
+    font-family: 'Ardilla', sans-serif;
+}
