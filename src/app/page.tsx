@@ -28,7 +28,7 @@ export default function Home() {
                         objectFit="cover"
                     />
                 </div>
-                <div className="col-span-6 lg:col-span-4">
+                <div id="category-gallery" className="col-span-6 lg:col-span-4">
                     <Categorygallery/>
                 </div>
             </section>

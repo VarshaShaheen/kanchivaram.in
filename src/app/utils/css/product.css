@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Futura';
+    src: url('../../../../public/fonts/Futura Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Geraldine';
+    src: url('../../../../public/fonts/Geraldine.ttf') format('truetype');
+}
+/* src/app/utils/css/category.css */
+@font-face {
+    font-family: 'Ardilla';
+    src: url('../../../../public/fonts/Ardilla.ttf') format('truetype');
+}
+
+.font-ardilla {
+    font-family: 'Ardilla', sans-serif;
+}
+.font-geraldine{
+    font-family: 'Geraldine', sans-serif;
+}
+.font-futura{
+    font-family: 'Futura',sans-serif;
+}
+
+.color-green{
+    color: #207020;
+}
+.max-width{
+    max-width: 75rem;
+}
+.min-height{
+    min-height: 73vh;
+}
+.color-grey{
+    color: #595555;
+}

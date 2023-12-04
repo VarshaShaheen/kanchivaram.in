@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app';
-import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore';
+import {collection, getDocs,doc,getDoc, getFirestore, query, where} from 'firebase/firestore';
 import 'firebase/firestore';
 import 'firebase/storage';
 
@@ -35,4 +35,27 @@ export const fetchProductsByCategory = async (category) => {
         return [];
     }
 };
+
+export const fetchProductData = async (code) => {
+    try {
+        const productDocRef = query(collection(db, "products"), where("code", "==", code));
+        const productDocSnap = await getDocs(productDocRef);
+
+        console.log('productDocSnap', productDocSnap);
+
+        // Check if any document matches the code
+        if (productDocSnap.docs.length > 0) {
+            const firstDoc = productDocSnap.docs[0];
+            return { id: firstDoc.id, ...firstDoc.data() };
+        } else {
+            console.error('Product not found for code:', code);
+            return null;
+        }
+    } catch (error) {
+        console.error('Error fetching product data:', error);
+        return null;
+    }
+};
+
+
 

@@ -35,21 +35,21 @@ const Gallery = () => {
     ];
 
     return (
-        <div className="flex flex-wrap justify-center">
+        <div className="flex overflow-x-auto scrollbar-hide">
             {images.map((image, index) => (
                 <div
                     key={index}
-                    className=" md:w-1/3 lg:w-1/4 xl:w-1/6 p-2 flex justify-center items-center"
+                    className=" sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-2 flex-shrink-0 "
                 >
                     <div className="relative">
                         <Image
                             src={image.src}
                             alt={image.caption}
                             className="price-category-img hover:shadow-none"
-                            width={6720}
+                            width={6000}
                             height={4480}
                         />
-                        <p className="absolute inset-0 flex items-center font-bold font-serif text-white justify-center text-center ">
+                        <p className="absolute inset-0 flex items-center font-bold font-serif text-white justify-center text-center line-height lg:text-xl md:text-base">
                             {image.caption}
                         </p>
                     </div>

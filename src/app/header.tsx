@@ -45,18 +45,13 @@ const Header = () => {
                     >
                         <ul className="h-auto items-center justify-center md:flex ">
                             <li className="pb-2 text-sm px-4 text-center border-b-2 md:border-b-0 hover:bg-green-700 border-green-700 md:hover:text-green-700 md:hover:bg-transparent">
-                                <Link href="/" onClick={() => setNavbar(!navbar)}>
+                                <Link href="/about" onClick={() => setNavbar(!navbar)}>
                                     ABOUT
                                 </Link>
                             </li>
                             <li className="pb-2 text-sm px-4 text-center border-b-2 md:border-b-0 hover:bg-green-700 border-green-700 md:hover:text-green-700 md:hover:bg-transparent">
-                                <Link href="/" onClick={() => setNavbar(!navbar)}>
+                                <Link href="#category-gallery" onClick={() => setNavbar(!navbar)}>
                                     CATEGORIES
-                                </Link>
-                            </li>
-                            <li className="pb-2 text-sm px-4 text-center border-b-2 md:border-b-0 hover:bg-green-700 border-green-700 md:hover:text-green-700 md:hover:bg-transparent">
-                                <Link href="/" onClick={() => setNavbar(!navbar)}>
-                                    BEST SELLERS
                                 </Link>
                             </li>
                             <li className="pb-2 text-sm px-4 text-center border-b-2 md:border-b-0 hover:bg-green-700 border-green-700 md:hover:text-green-700 md:hover:bg-transparent">
