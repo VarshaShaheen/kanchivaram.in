@@ -28,7 +28,7 @@ const CategoryGallery = ({ product }) => {
         <div className="p-6">
             <h1 className="text-5xl text-center capitalize font-ardilla mb-12 mt-5">Similar products</h1>
             {loading ? (
-                <div>Loading...</div>
+                <div>Loading..</div>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {products.map((product) =>(
