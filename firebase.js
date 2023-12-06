@@ -57,5 +57,19 @@ export const fetchProductData = async (code) => {
     }
 };
 
+export const fetchProductsByPriceRange = async (lowerLimit, upperLimit) => {
+    try {
+        const q = query(
+            collection(db, "products"),
+            where("mrp", ">=", lowerLimit),
+            where("mrp", "<=", upperLimit)
+        );
+        const querySnapshot = await getDocs(q);
 
+        return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    } catch (error) {
+        console.error('Error fetching products by price range:', error);
+        return [];
+    }
+};
 

@@ -4,6 +4,10 @@
     font-family: 'Ardilla';
     src: url('../../../../public/fonts/Ardilla.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Cocomat';
+    src: url('../../../../public/fonts/Cocomat Light-trial.ttf') format('truetype');
+}
 
 .font-ardilla {
     font-family: 'Ardilla', sans-serif;
@@ -11,4 +15,13 @@
 
 .cart-margin{
     margin-left: 14rem;
+}
+.font-cocmat{
+    font-family: 'Cocomat', serif;
+}
+/* category.css */
+.category-carousal{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
 }
