@@ -78,7 +78,7 @@ const CategoryGallery = ({ product }) => {
 
     return (
         <div className="p-6">
-            <h1 className="text-5xl text-center capitalize font-cocmat mb-12 mt-3">Similar products</h1>
+            <h1 className="text-4xl text-center capitalize font-cocmat mb-12 mt-3">Similar products</h1>
             {loading ? (
                 <div>Loading..</div>
             ) : (

@@ -58,9 +58,9 @@ const SingleProductDescription = ({ params }) => {
                                         />
                                     ))}
                                 </div>
-                                <h2 className="  flex font-cocmat uppercase size-heading mobile-align">{product.name}</h2>
+                                <h2 className="  flex font-serif uppercase size-heading mobile-align">{product.name}</h2>
                                 <div className="flex items-center mb-7 mobile-align">
-                                    <span className="color-grey size-description font-cocmat "> {product.description}</span>
+                                    <span className="color-grey size-description font-serif "> {product.description}</span>
                                 </div>
                             </div>
                             <div className="mobile-margin">
