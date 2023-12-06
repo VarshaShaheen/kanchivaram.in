@@ -38,11 +38,11 @@ const Gallery = () => {
     return (
         <div className="flex overflow-x-auto scrollbar-hide">
             {images.map((image, index) => (
-                <Link href={image.destination} key={index}>
                 <div
                     key={index}
                     className=" sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-2 flex-shrink-0 "
                 >
+                    <Link href={image.destination} key={index}>
                     <div className="relative">
                         <Image
                             src={image.src}
@@ -55,8 +55,8 @@ const Gallery = () => {
                             {image.caption}
                         </p>
                     </div>
+                    </Link>
                 </div>
-                </Link>
             ))}
         </div>
     );
