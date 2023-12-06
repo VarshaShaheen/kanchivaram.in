@@ -41,19 +41,19 @@ const Testimonials = () => {
                         <div className="h-full relative z-10 mt-8 ml-2">
                             {testimonialActive === 1 && (
                                 <p className="text-gray-600 serif font-normal italic mt-3 px-6 py-6 md:px-10 md:py-8 text-m md:text-xl">
-                                    Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                    I have bought 4 sarees from KANCHIVARAM. IN boutique...... I love this sarees..... New design and colour combination is very good...... Pure kanchi silk..... Quality is very good..... Fast delivery and packaging is good....will buy again and again...you can trust this store to buy original kanchipuram silk sarees..... Easy to Carry i like this boutique...... Thanks for KANCHIVARAM. IN😍❤️
                                 </p>
                             )}
 
                             {testimonialActive === 2 && (
                                 <p className="text-gray-600 serif font-normal italic mt-3 px-6 py-6 md:px-10 md:py-8 text-m md:text-xl">
-                                    Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                    I have purchased a tussar saree from Kanchivaram  for my mother. The saree was awesome and my mother loved it so much. I am very happy with  service by Kanchivaram. I have received the saree the next day of ordering. I am highly satisfied with my purchase and I do recommend Kanchivaram to my family and friends. Thank you Kanchivaram once again for your wonderful service.
                                 </p>
                             )}
 
                             {testimonialActive === 3 && (
                                 <p className="text-gray-600 serif font-normal italic mt-3 px-6 py-6 md:px-10 md:py-8 text-m md:text-xl">
-                                    Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                    Based out here in Scotland UK Arya and her team did a fantastic job of showing me all the sarees which I selected virtually even going beyond on not selected ones and picked up couple for my Mum.Their patience and feedback is commendable.Absolutely my parents loved the saree and sarees smell was very nice Sandal woody.love Natasha
                                 </p>
                             )}
                         </div>
@@ -63,41 +63,39 @@ const Testimonials = () => {
                                 onClick={() => setTestimonialActive(1)}
                                 className={`text-center font-bold shadow-xs focus:outline-none focus:shadow-outline inline-block rounded-full mx-2 ${testimonialActive !== 1 ? 'h-12 w-12 opacity-25 bg-green-600 text-gray-200' : 'h-16 w-16 opacity-100 bg-green-950 text-white'}`}
                             >
-                                JD
+                                SL
                             </button>
                             <button
                                 onClick={() => setTestimonialActive(2)}
                                 className={`text-center font-bold shadow-xs focus:outline-none focus:shadow-outline h-16 w-16 inline-block bg-green-950 rounded-full mx-2 ${testimonialActive !== 2 ? 'h-12 w-12 opacity-25 bg-green-600 text-gray-200' : 'h-16 w-16 opacity-100 bg-green-950 text-white'}`}
                             >
-                                WD
+                                GS
                             </button>
                             <button
                                 onClick={() => setTestimonialActive(3)}
                                 className={`text-center font-bold shadow-xs focus:outline-none focus:shadow-outline h-12 w-12 inline-block bg-green-950 rounded-full mx-2 ${testimonialActive !== 3 ? 'h-12 w-12 opacity-25 bg-green-600 text-gray-200' : 'h-16 w-16 opacity-100 bg-green-950 text-white'}`}
                             >
-                                JW
+                                NK
                             </button>
                         </div>
 
                         <div className="flex justify-center px-6 pt-2 pb-6 md:py-6">
                             {testimonialActive === 1 && (
                                 <div className="text-center">
-                                    <h2 className="text-sm md:text-base font-bold text-gray-700 leading-tight">John Doe</h2>
-                                    <small className="text-gray-500 text-xs md:text-sm truncate">CEO, ABC Inc.</small>
+                                    <h2 className="text-sm md:text-base font-bold text-gray-700 leading-tight">JSheebalenin</h2>
                                 </div>
                             )}
 
                             {testimonialActive === 2 && (
                                 <div className="text-center">
-                                    <h2 className="text-sm md:text-base font-bold text-gray-700 leading-tight">Winter Doe</h2>
-                                    <small className="text-gray-500 text-xs md:text-sm truncate">CTO, XYZ Corp.</small>
+                                    <h2 className="text-sm md:text-base font-bold text-gray-700 leading-tight">Gissy Shibu</h2>
+                                    {/*<small className="text-gray-500 text-xs md:text-sm truncate">CTO, XYZ Corp.</small>*/}
                                 </div>
                             )}
 
                             {testimonialActive === 3 && (
                                 <div className="text-center">
-                                    <h2 className="text-sm md:text-base font-bold text-gray-700 leading-tight">Jane Williams</h2>
-                                    <small className="text-gray-500 text-xs md:text-sm truncate">VP, PQR Ltd.</small>
+                                    <h2 className="text-sm md:text-base font-bold text-gray-700 leading-tight">Natasha K</h2>
                                 </div>
                             )}
                         </div>
