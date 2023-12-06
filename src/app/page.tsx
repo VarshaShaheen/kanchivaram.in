@@ -19,7 +19,7 @@ export default function Home() {
             </section>
 
             <section className={"mt-10 mb-10 ml-10 mr-10 grid grid-cols-6 w-100"} id="categories">
-                <h1 className={"font-bold text-2xl mb-5 text-center col-span-6"}>CATEGORIES</h1>
+                <h1 className={"font-bold text-2xl mb-5 text-center col-span-6"}>CATEGORIE</h1>
                 <div className={"col-span-2 hidden lg:block relative rounded-lg overflow-hidden mr-6 mb-2"}>
                     <Image
                         src={"/gallery/banner-fin.jpg"}
