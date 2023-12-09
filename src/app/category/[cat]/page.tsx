@@ -5,6 +5,10 @@ import Image from 'next/image'
 import Link from "next/link";
 import "@/app/utils/css/category.css";
 
+interface params {
+    cat: string;
+}
+
 const CategoryPage = async ({ params }) => {
     const { cat: category } = params;
 
