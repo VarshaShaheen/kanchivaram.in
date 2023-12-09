@@ -3,7 +3,7 @@ import Footer from "@/app/components/footer";
 import Image from 'next/image'
 import "@/app/utils/css/terms.css";
 
-const AboutUs = () => {
+const silkCare = () => {
     return (
         <div>
             <div className="flex flex-col items-center">
@@ -13,7 +13,7 @@ const AboutUs = () => {
                     <p className="pt-4 px-10 mx-5 about-width justify-center">
                         Pure Kanchipuram silk sarees are delicate and require special care.
                         We recommend dry cleaning as the primary method for cleaning these exquisite garments.
-                        Professional dry cleaning ensures that the saree's colors and intricate weaving are preserved without any damage.
+                        Professional dry cleaning ensures that the saree&apos;s colors and intricate weaving are preserved without any damage.
                     </p>
                     <h3 className="pt-7 text-green-950 text-2xl px-3">2. Avoid Machine Washing:</h3>
                     <p className="pt-4 px-10 mx-5 about-width justify-center">
@@ -54,7 +54,7 @@ const AboutUs = () => {
                         If your Kanchipuram silk saree requires repair or restoration, consult with a professional silk specialist. Attempting to fix damages at home may lead to further issues.
                     </p>
                     <p className="pt-4 px-10 mx-5 about-width justify-center">
-                        By following these care instructions, you'll contribute to preserving the beauty and integrity of your pure Kanchipuram silk sarees for generations to come.
+                        By following these care instructions, you&apos;ll contribute to preserving the beauty and integrity of your pure Kanchipuram silk sarees for generations to come.
                     </p>
                     <h5 className="pt-7 text-green-950 text-2xl text-center mb-10 mt-6"> Elegance. Tradition. <a href="https://www.kanchivaram.in" className="color-green">Kanchivaram.in</a>.</h5>
                 </div>
@@ -66,5 +66,5 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default silkCare;
 
