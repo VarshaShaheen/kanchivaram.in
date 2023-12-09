@@ -5,11 +5,11 @@ import Image from 'next/image'
 import Link from "next/link";
 import "@/app/utils/css/category.css";
 
-interface params {
+interface Params {
     cat: string;
 }
 
-const CategoryPage = async ({ params }) => {
+const CategoryPage = async ({ params }: { params: Params }) => {
     const { cat: category } = params;
 
     const products = await fetchProductsByCategory(category);
