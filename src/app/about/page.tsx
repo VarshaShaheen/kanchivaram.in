@@ -37,7 +37,7 @@ const AboutUs = () => {
                 <p className="pt-4 px-10 mx-5 about-width justify-center">
                     At Kanchivaram.in, we aspire to be more than a purveyor of sarees. We are dedicated to fostering an
                     appreciation for the timeless beauty of traditional Indian attire. Our vision is to be your trusted
-                    companion in celebrating life's significant moments with grace and elegance.
+                    companion in celebrating life&apos;s significant moments with grace and elegance.
                 </p>
                 <h3 className="pt-7 font-ardilla text-green-950 text-3xl px-3"> Quality Assurance:</h3>
                 <p className="pt-4 px-10 mx-5 about-width justify-center">

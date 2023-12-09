@@ -238,3 +238,55 @@ Before we get started, keep in mind:
 [info] +  Uploaded service account JSON to GitHub as secret FIREBASE_SERVICE_ACCOUNT_KANCHIVARAM_4F387. 
 [info] i  You can manage your secrets at https://github.com/varshashaheen/kanchivaram.in/settings/secrets. 
 [info] 
+[debug] [2023-12-09T15:20:10.497Z] ----------------------------------------------------------------------
+[debug] [2023-12-09T15:20:10.500Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Varsha\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-12-09T15:20:10.500Z] CLI Version:   12.9.1
+[debug] [2023-12-09T15:20:10.500Z] Platform:      win32
+[debug] [2023-12-09T15:20:10.501Z] Node Version:  v20.2.0
+[debug] [2023-12-09T15:20:10.501Z] Time:          Sat Dec 09 2023 20:50:10 GMT+0530 (India Standard Time)
+[debug] [2023-12-09T15:20:10.501Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-09T15:20:10.560Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-09T15:20:10.560Z] > authorizing via signed-in user (varshashaheen2003@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Varsha\Desktop\work\kanchi
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-12-09T15:20:44.303Z] Using project from CLI flag: kanchivaram-4f387
+[debug] [2023-12-09T15:20:44.304Z] > refreshing access token with scopes: []
+[debug] [2023-12-09T15:20:44.306Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-09T15:20:44.307Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-09T15:20:44.629Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-09T15:20:44.629Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-09T15:20:44.643Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/kanchivaram-4f387 [none]
+[debug] [2023-12-09T15:20:45.293Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/kanchivaram-4f387 200
+[debug] [2023-12-09T15:20:45.294Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/kanchivaram-4f387 {"projectId":"kanchivaram-4f387","projectNumber":"87195945574","displayName":"Kanchivaram","name":"projects/kanchivaram-4f387","resources":{"hostingSite":"kanchivaram-4f387","storageBucket":"kanchivaram-4f387.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_3a25a3f5-6ef1-475f-9c2b-8441cbd1cd1e"}
+[info] i  Using project kanchivaram-4f387 (Kanchivaram) 
+[info] 
+=== Hosting Setup
+[debug] [2023-12-09T15:20:45.348Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/kanchivaram-4f387 [none]
+[debug] [2023-12-09T15:20:45.928Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/kanchivaram-4f387 200
+[debug] [2023-12-09T15:20:45.929Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/kanchivaram-4f387 {"projectId":"kanchivaram-4f387","projectNumber":"87195945574","displayName":"Kanchivaram","name":"projects/kanchivaram-4f387","resources":{"hostingSite":"kanchivaram-4f387","storageBucket":"kanchivaram-4f387.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_3a25a3f5-6ef1-475f-9c2b-8441cbd1cd1e"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

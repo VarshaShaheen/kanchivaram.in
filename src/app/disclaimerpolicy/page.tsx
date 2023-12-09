@@ -25,7 +25,7 @@ const AboutUs = () => {
                     <h3 className="pt-7  text-green-950 text-2xl px-3">3. Product Representation:</h3>
                     <p className="pt-4 px-10 mx-5 about-width justify-center">
                         Product images on our website are for illustrative purposes only. We make every effort to display
-                        the colors and details accurately, but we cannot guarantee that your device's display accurately reflects the colors
+                        the colors and details accurately, but we cannot guarantee that your device&apos;s display accurately reflects the colors
                         of the products. The actual products may vary slightly from the images.
                     </p>
                     <h3 className="pt-7  text-green-950 text-2xl px-3">4. Availability and Pricing:</h3>

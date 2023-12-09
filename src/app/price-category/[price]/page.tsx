@@ -14,9 +14,6 @@ const PricePage = ({ params }) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        console.log('Lower Limit:', lowerLimit);
-        console.log('Upper Limit:', upperLimit);
-
         const fetchProducts = async () => {
             const products = await fetchProductsByPriceRange(lowerLimit, upperLimit);
             setProducts(products);

@@ -85,12 +85,12 @@ const SingleProductDescription = ({ params }) => {
                                     </div>
                                     <div className="flex items-center mb-1 mt-4">
                                         <Link href="/silk-care" passHref>
-                                            <span className=" mr-2 color-green ">> Silk Care Instructions</span>
+                                            <span className=" mr-2 color-green ">{'>'}Silk Care Instructions</span>
                                         </Link>
                                     </div>
                                     <div className="flex items-center mb-2">
                                         <Link href="/return-policy" passHref>
-                                            <span className=" mr-2 color-green ">> Refund and Return Policy</span>
+                                            <span className=" mr-2 color-green ">{'>'} Refund and Return Policy</span>
                                         </Link>
                                     </div>
                                     <div className="flex py-4 space-x-4 mobile-hide">
