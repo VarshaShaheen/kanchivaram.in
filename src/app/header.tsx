@@ -55,12 +55,12 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className="pb-2 text-sm px-4 text-center border-b-2 md:border-b-0 hover:bg-green-700 border-green-700 md:hover:text-green-700 md:hover:bg-transparent">
-                                <Link href="/" onClick={() => setNavbar(!navbar)}>
+                                <Link href="#testimonials" onClick={() => setNavbar(!navbar)}>
                                     TESTIMONY
                                 </Link>
                             </li>
                             <li className="pb-2 text-sm px-4 text-center border-b-2 md:border-b-0 hover:bg-green-700 border-green-700 md:hover:text-green-700 md:hover:bg-transparent">
-                                <Link href="/" onClick={() => setNavbar(!navbar)}>
+                                <Link href="/contact-us" onClick={() => setNavbar(!navbar)}>
                                     CONTACT
                                 </Link>
                             </li>

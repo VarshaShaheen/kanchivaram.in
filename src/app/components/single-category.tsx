@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "@/app/utils/css/category.css";
+import Link from "next/link";
 
 const CategoryGallery = ({ product }) => {
     const [products, setProducts] = useState([]);
@@ -84,6 +85,7 @@ const CategoryGallery = ({ product }) => {
             ) : (
                 <Slider ref={sliderRef} {...settings}>
                     {products.map((product) => (
+                        <Link href="/product/[code]" as={`/product/${product.code}`} key={product.id}>
                         <div key={product.id} className="rounded overflow-hidden bg-white px-2 ">
                             <div className="relative w-full h-80">
                                 <img
@@ -112,7 +114,9 @@ const CategoryGallery = ({ product }) => {
                                     />
                                 </div>
                             </div>
+
                         </div>
+                        </Link>
                     ))}
                 </Slider>
             )}

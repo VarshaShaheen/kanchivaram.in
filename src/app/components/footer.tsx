@@ -24,7 +24,7 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <div className="text-base text-gray-500 hover:text-gray-900" href="#">
+                                <div className="text-base text-gray-500 hover:text-gray-900" href="/contact-us">
                                     Contact Us
                                 </div>
                             </li>
