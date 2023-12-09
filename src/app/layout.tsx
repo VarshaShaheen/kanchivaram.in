@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from './Header.tsx';
+import Header from './header.tsx';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
