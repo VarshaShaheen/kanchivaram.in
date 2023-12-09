@@ -15,12 +15,13 @@ interface Product {
     image: { downloadURL: string; }[];
     name: string;
     mrp: number;
+    // include other properties as needed
 }
 
 const CategoryPage = async ({ params }: { params: Params }) => {
     const { cat: category } = params;
 
-    const products = await fetchProductsByCategory(category);
+    const products: Product[] = await fetchProductsByCategory(category);
 
     return (
         <div className="p-6">
