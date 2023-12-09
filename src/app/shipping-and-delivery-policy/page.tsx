@@ -1,9 +1,8 @@
 import React from "react";
 import Footer from "@/app/components/footer";
-import Image from 'next/image'
 import "@/app/utils/css/terms.css";
 
-const AboutUs = () => {
+const Shipping = () => {
     return (
         <div>
             <div className="flex flex-col items-center">
@@ -33,7 +32,7 @@ const AboutUs = () => {
                     </p>
                     <h3 className="pt-7  text-green-950 text-2xl px-3">5. Order Tracking:</h3>
                     <p className="pt-4 px-10 mx-5 about-width justify-center">
-                        To keep you informed about the status of your order, we provide a tracking number once your order has been dispatched. You can use this tracking number to monitor the delivery status through our website or the courier service's platform.
+                        To keep you informed about the status of your order, we provide a tracking number once your order has been dispatched. You can use this tracking number to monitor the delivery status through our website or the courier service&apos;s platform.
                     </p>
                     <h3 className="pt-7  text-green-950 text-2xl px-3">6. International Shipping:</h3>
                     <p className="pt-4 px-10 mx-5 about-width justify-center">
@@ -65,5 +64,5 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default Shipping;
 
