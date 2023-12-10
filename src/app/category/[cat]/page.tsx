@@ -12,8 +12,6 @@ type Product = {
 const CategoryPage = async ({ params }: { params: { cat: string } }) => {
     try {
         const {cat: category} = params;
-
-        // Make sure fetchProductsByCategory returns an array of objects with the expected properties
         const products: Product[] = await fetchProductsByCategory(category);
 
         return (

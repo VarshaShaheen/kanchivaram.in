@@ -14,9 +14,6 @@ const firebaseConfig = {
 };
 export default firebaseConfig;
 const app = initializeApp(firebaseConfig);
-
-
-// Export Firestore
 export const db = getFirestore(app);
 
 export const fetchProductsByCategory = async (category) => {
