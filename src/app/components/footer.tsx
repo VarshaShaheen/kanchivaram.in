@@ -31,17 +31,25 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li className="flex mt-2">
-                                <div href="#">
+                                <div>
+                                <Link href="/">
                                     <img src="/social-icons/insta.png" className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300" />
+                                </Link>
                                 </div>
-                                <div href="#">
-                                    <img src="/social-icons/fb.png" className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300" />
+                                <div>
+                                    <Link href="/">
+                                        <img src="/social-icons/fb.png" className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300" />
+                                    </Link>
                                 </div>
-                                <div href="#">
+                                <div>
+                                    <Link href="/">
                                     <img src="/social-icons/twitter.png" className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300" />
+                                    </Link>
                                 </div>
-                                <div href="#">
+                                <div>
+                                    <Link href="/">
                                     <img src="/social-icons/youtube.png" className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300" />
+                                    </Link>
                                 </div>
                             </li>
                         </ul>
