@@ -1,10 +1,17 @@
-// CategoryGallery.tsx
-
 import Image from "next/image";
 import Link from "next/link";
 import { CATEGORIES } from "@/app/utils/constants";
 
-function GridItem({ image, categoryName, categoryUrl }) {
+type GridItemProps = {
+    image: {
+        src: string;
+        alt: string;
+    };
+    categoryName: string;
+    categoryUrl: string;
+};
+
+function GridItem({ image, categoryName, categoryUrl }: GridItemProps){
     return (
         <div className="mb-2 relative">
 
