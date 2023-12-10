@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
-import { fetchProductsByPriceRange } from "../../../../firebase";
-import { useEffect, useState } from "react";
+import {fetchProductsByCategory, fetchProductsByPriceRange} from "../../../../firebase";
 import Footer from "@/app/components/footer";
 import Image from 'next/image'
 import "@/app/utils/css/category.css";
 
-type products = {
+type Product = {
     id: string;
     code: string;
     image: { downloadURL: string }[];
@@ -14,22 +13,12 @@ type products = {
     mrp: number;
 };
 
-const PricePage = ({ params }: { params: { price: string } }) => {
+const PricePage = async ({ params }: { params: { price: string } }) =>{
     const { price: priceRange } = params;
     const range = priceRange.split('-');
     const lowerLimit = parseFloat(range[0]);
     const upperLimit = parseFloat(range[1]);
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const products = await fetchProductsByPriceRange(lowerLimit, upperLimit);
-            setProducts(products);
-        };
-
-        fetchProducts();
-        console.log('Products:', products);
-    }, [lowerLimit, upperLimit]);
+    const products: Product[] = await fetchProductsByPriceRange(lowerLimit,upperLimit);
 
     return (
         <div className="p-6">
