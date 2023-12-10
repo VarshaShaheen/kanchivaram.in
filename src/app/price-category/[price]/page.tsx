@@ -6,7 +6,15 @@ import Footer from "@/app/components/footer";
 import Image from 'next/image'
 import "@/app/utils/css/category.css";
 
-const PricePage = ({ params }) => {
+type products = {
+    id: string;
+    code: string;
+    image: { downloadURL: string }[];
+    name: string;
+    mrp: number;
+};
+
+const PricePage = ({ params }: { params: { cat: string } }) => {
     const { price: priceRange } = params;
     const range = priceRange.split('-');
     const lowerLimit = parseFloat(range[0]);
