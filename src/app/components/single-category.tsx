@@ -26,10 +26,14 @@ type categoryProduct = {
     mrp: number;
 };
 
+interface SliderExtended extends Slider {
+    slickPlay: () => void;
+}
+
 const CategoryGallery: React.FC<CategoryGalleryProps> = ({ product }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const sliderRef = useRef<Slider>(null);
+    const sliderRef = useRef<SliderExtended>(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -107,15 +111,19 @@ const CategoryGallery: React.FC<CategoryGalleryProps> = ({ product }) => {
                         <Link href="/product/[code]" as={`/product/${product.code}`} key={product.id}>
                         <div key={product.id} className="rounded overflow-hidden bg-white px-2 ">
                             <div className="relative w-full h-80">
-                                <img
+                                <Image
                                     className="w-full h-full object-cover absolute"
                                     src={product.image[0].downloadURL}
                                     alt={product.name}
+                                    width={600}
+                                    height={500}
                                 />
-                                <img
+                                <Image
                                     className="w-full h-full object-cover absolute hover:opacity-100 opacity-0 transition-opacity duration-200"
                                     src={product.image[1].downloadURL}
                                     alt={product.name}
+                                    width={600}
+                                    height={500}
                                 />
                             </div>
                             <div className="py-3">
