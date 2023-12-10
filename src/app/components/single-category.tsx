@@ -7,25 +7,33 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/app/utils/css/category.css";
 import Link from "next/link";
 
+type categoryProduct = {
+    id: string;
+    code: string;
+    image: { downloadURL: string }[];
+    name: string;
+    mrp: number;
+};
+
 const CategoryGallery = ({ product }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const sliderRef = useRef(null);
-    // ... other states and effects ...
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            sliderRef.current.slickPlay();
+            if (sliderRef.current) {
+                sliderRef.current.slickPlay();
+            }
         }, 1000); // start playing after 1 second
 
         return () => clearTimeout(timer); // cleanup on unmount
     }, []);
 
-
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const categoryProducts = await fetchProductsByCategory(product.categories);
+                const categoryProducts: categoryProduct[]  = await fetchProductsByCategory(product.categories);
                 setProducts(categoryProducts);
                 setLoading(false);
             } catch (error) {
