@@ -23,7 +23,7 @@ const CategoryPage = async ({ params }: { params: { cat: string } }) => {
             <div className="p-6">
                 <h1 className="text-5xl text-center capitalize font-ardilla mb-12 mt-5">{category}</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    {products?.map((product) => (
+                    {products?.map((product: Product) => (
                         <Link href="/product/[code]" as={`/product/${product.code}`} key={product.id}>
                             <div key={product.id} className="rounded overflow-hidden bg-white">
                                 <div className="relative w-full h-80">
