@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import CarouselComponent from "./components/carousel.tsx";
+import CarouselComponent from "./components/carousel";
 import Gallery from "@/app/components/price-categories";
 import Categorygallery from "@/app/components/categories";
 import Testimonials from "@/app/components/testimonials";
