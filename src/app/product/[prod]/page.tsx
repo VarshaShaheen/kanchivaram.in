@@ -48,7 +48,7 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
         fetchData();
     }, [code]);
 
-    const handleImageClick = (index) => {
+    const handleImageClick = (index: number) => {
         setSelectedImage(index);
     };
 
