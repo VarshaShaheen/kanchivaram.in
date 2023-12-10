@@ -17,6 +17,7 @@ type result = {
     fabric: string;
     height: string;
     weight: string;
+    categories: string;
 };
 
 type product = {
@@ -30,6 +31,7 @@ type product = {
     fabric: string;
     height: string;
     weight: string;
+    categories: string;
 }
 
 const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
@@ -157,7 +159,7 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
                     alt={"Banner Image"}
                 />
             </div>
-             <CategoryGallery product={product} />
+            <CategoryGallery product={{ categories: product.categories }} />
             <div className="mt-8" id="footer">
                 <Footer />
             </div>

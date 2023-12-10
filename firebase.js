@@ -50,27 +50,30 @@ export const fetchProductData = async (code) => {
         // Check if any document matches the code
         if (productDocSnap.docs.length > 0) {
             const firstDoc = productDocSnap.docs[0];
-            return { id: firstDoc.id, ...firstDoc.data() };
+            const data = firstDoc.data();
+            return {
+                id: firstDoc.id,
+                code: data.code,
+                image: data.image,
+                name: data.name,
+                mrp: data.mrp,
+                description: data.description,
+                color: data.color,
+                fabric: data.fabric,
+                height: data.height,
+                weight: data.weight,
+                categories: data.categories,
+            };
         } else {
             console.error('Product not found for code:', code);
-            return {
-                id: '',
-                code: '',
-                image: [],
-                name: '',
-                mrp: 0,
-                description: '',
-                color: '',
-                fabric: '',
-                height: '',
-                weight: '',
-            };
+            return null;
         }
     } catch (error) {
         console.error('Error fetching product data:', error);
         return null;
     }
 };
+
 
 
 export const fetchProductsByPriceRange = async (lowerLimit, upperLimit) => {
