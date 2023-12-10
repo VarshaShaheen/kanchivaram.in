@@ -34,7 +34,7 @@ type product = {
 
 const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
     const { prod: code } = params;
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState<product | null>(null);
     const [selectedImage, setSelectedImage] = useState(0);
 
     useEffect(() => {
