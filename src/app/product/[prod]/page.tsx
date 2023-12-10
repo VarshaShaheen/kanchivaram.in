@@ -32,7 +32,7 @@ type product = {
     weight: string;
 }
 
-const SingleProductDescription = ({ params }: { params: { cat: string } }) => {
+const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
     const { prod: code } = params;
     const [product, setProduct] = useState(null);
     const [selectedImage, setSelectedImage] = useState(0);

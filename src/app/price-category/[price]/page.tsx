@@ -14,7 +14,7 @@ type products = {
     mrp: number;
 };
 
-const PricePage = ({ params }: { params: { cat: string } }) => {
+const PricePage = ({ params }: { params: { price: string } }) => {
     const { price: priceRange } = params;
     const range = priceRange.split('-');
     const lowerLimit = parseFloat(range[0]);
