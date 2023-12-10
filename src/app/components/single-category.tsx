@@ -7,17 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/app/utils/css/category.css";
 import Link from "next/link";
 
-type ProductProp = {
-    id: string;
-    code: string;
-    image: { downloadURL: string }[];
-    name: string;
-    mrp: number;
-    categories: string;
-};
-type CategoryGalleryProps = {
-    product: ProductProp;
-};
 type categoryProduct = {
     id: string;
     code: string;
@@ -26,12 +15,20 @@ type categoryProduct = {
     mrp: number;
 };
 
+type ProductProp = {
+    categories: string;
+};
+
+type CategoryGalleryProps = {
+    product: ProductProp;
+};
+
 interface SliderExtended extends Slider {
     slickPlay: () => void;
 }
 
 const CategoryGallery: React.FC<CategoryGalleryProps> = ({ product }) => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<categoryProduct[]>([]);
     const [loading, setLoading] = useState(true);
     const sliderRef = useRef<SliderExtended>(null);
 
@@ -62,7 +59,7 @@ const CategoryGallery: React.FC<CategoryGalleryProps> = ({ product }) => {
     }, [product.categories]);
 
 
-    const settings = {
+const settings = {
         dots: true,
         infinite: true,
         speed: 500,
