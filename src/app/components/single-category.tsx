@@ -7,6 +7,17 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/app/utils/css/category.css";
 import Link from "next/link";
 
+type ProductProp = {
+    id: string;
+    code: string;
+    image: { downloadURL: string }[];
+    name: string;
+    mrp: number;
+    categories: string;
+};
+type CategoryGalleryProps = {
+    product: ProductProp;
+};
 type categoryProduct = {
     id: string;
     code: string;
@@ -15,7 +26,7 @@ type categoryProduct = {
     mrp: number;
 };
 
-const CategoryGallery = ({ product }) => {
+const CategoryGallery: React.FC<CategoryGalleryProps> = ({ product }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const sliderRef = useRef(null);
@@ -44,7 +55,7 @@ const CategoryGallery = ({ product }) => {
         };
 
         fetchData();
-    }, [product.category]);
+    }, [product.categories]);
 
 
     const settings = {
