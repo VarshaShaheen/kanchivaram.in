@@ -23,12 +23,22 @@ export const fetchProductsByCategory = async (category) => {
 
         console.log('querySnapshot', querySnapshot);
 
-        return querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+        return querySnapshot.docs.map((doc) => {
+            const data = doc.data();
+            return {
+                id: doc.id,
+                code: data.code,
+                image: data.image,
+                name: data.name,
+                mrp: data.mrp
+            };
+        });
     } catch (error) {
         console.error('Error fetching products by category:', error);
         return [];
     }
 };
+
 
 export const fetchProductData = async (code) => {
     try {
