@@ -53,13 +53,25 @@ export const fetchProductData = async (code) => {
             return { id: firstDoc.id, ...firstDoc.data() };
         } else {
             console.error('Product not found for code:', code);
-            return null;
+            return {
+                id: '',
+                code: '',
+                image: [],
+                name: '',
+                mrp: 0,
+                description: '',
+                color: '',
+                fabric: '',
+                height: '',
+                weight: '',
+            };
         }
     } catch (error) {
         console.error('Error fetching product data:', error);
         return null;
     }
 };
+
 
 export const fetchProductsByPriceRange = async (lowerLimit, upperLimit) => {
     try {
