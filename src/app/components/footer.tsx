@@ -24,9 +24,11 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <div className="text-base text-gray-500 hover:text-gray-900" href="/contact-us">
+                                <Link href="/contact-us" passHref>
+                                <div className="text-base text-gray-500 hover:text-gray-900">
                                     Contact Us
                                 </div>
+                                </Link>
                             </li>
                             <li className="flex mt-2">
                                 <div href="#">
