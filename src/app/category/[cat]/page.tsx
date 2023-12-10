@@ -7,11 +7,6 @@ import "@/app/utils/css/category.css";
 
 type Product = {
     id: string;
-    code: string;
-    image: { downloadURL: string }[];
-    name: string;
-    mrp: number;
-    // other properties...
 };
 
 const CategoryPage = async ({ params }: { params: { cat: string } }) => {
