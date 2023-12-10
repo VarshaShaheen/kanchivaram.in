@@ -29,7 +29,7 @@ type categoryProduct = {
 const CategoryGallery: React.FC<CategoryGalleryProps> = ({ product }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const sliderRef = useRef(null);
+    const sliderRef = useRef<Slider>(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
