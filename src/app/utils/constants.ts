@@ -1,4 +1,4 @@
-function getCategory(name, src, url) {
+function getCategory(name:string , src:string, url:string) {
     return {
         name,
         image: {
