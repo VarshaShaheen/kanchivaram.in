@@ -19,6 +19,19 @@ type result = {
     weight: string;
 };
 
+type product = {
+    id: string;
+    code: string;
+    image: { downloadURL: string }[];
+    name: string;
+    mrp: number;
+    description: string;
+    color: string;
+    fabric: string;
+    height: string;
+    weight: string;
+}
+
 const SingleProductDescription = ({ params }: { params: { cat: string } }) => {
     const { prod: code } = params;
     const [product, setProduct] = useState(null);

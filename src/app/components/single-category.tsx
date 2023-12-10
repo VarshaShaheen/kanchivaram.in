@@ -15,21 +15,6 @@ type categoryProduct = {
     mrp: number;
 };
 
-type product = {
-    categories: string;
-    code: string;
-    description: string;
-    fabric: string;
-    height: string;
-    image: { downloadURL: string }[];
-    mrp: number;
-    name: string;
-    weight: string;
-    color: string;
-};
-
-
-
 const CategoryGallery = ({ product }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
