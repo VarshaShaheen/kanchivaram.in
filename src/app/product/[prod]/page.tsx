@@ -61,8 +61,10 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
     }, [cart]);
 
     useEffect(() => {
-        if (localStorage.getItem("cart"))
-            setCart(JSON.parse(localStorage.getItem("cart")));
+        const cartFromLocalStorage = localStorage.getItem("cart");
+        if (cartFromLocalStorage) {
+            setCart(JSON.parse(cartFromLocalStorage));
+        }
     }, []);
 
     const addToCart = () => {
