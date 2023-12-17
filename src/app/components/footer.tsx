@@ -13,7 +13,7 @@ const Footer = () => {
                                 className="h-20 flex justify-center sm:justify-start"
                                 src="/logo.png"
                                 alt="Company Logo"
-                                width={150} // Set your width
+                                width={120} // Set your width
                                 height={200} // Set your height
                             />
                         </Link>

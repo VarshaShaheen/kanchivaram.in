@@ -27,8 +27,12 @@ const Cart = () => {
                         <div className="rounded-lg md:w-2/3">
                             {cart.map((item) => (
                                 <div key={item.id} className="justify-between mb-4 rounded-lg bg-white p-4 shadow-md sm:flex sm:justify-start">
-                                    <div className="w-32 h-32 overflow-hidden rounded-lg">
-                                        <img src={item.image[0].downloadURL} alt={item.name} className="w-full h-full object-cover" />
+                                    <div className="w-full h-32 md:w-32 md:h-32 overflow-hidden rounded-lg">
+                                        <img
+                                            src={item.image[0].downloadURL}
+                                            alt={item.name}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
                                     <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                                         <div className="mt-3 sm:mt-0">

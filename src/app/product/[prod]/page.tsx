@@ -5,6 +5,7 @@ import Footer from '@/app/components/footer';
 import "@/app/utils/css/product.css";
 import Link from 'next/link';
 import CategoryGallery from '@/app/components/single-category';
+import Image from 'next/image';
 
 type result = {
     id: string;
@@ -92,10 +93,12 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
                     <div className="md:flex md:flex-row ">
                         <div className="md:w-4/12 md:mb-0 mb-4">
                             <div className="size-img aspect-w-1 aspect-h-1 transition-transform transform hover:scale-105">
-                                <img
-                                    className="object-cover w-full h-full rounded-lg "
+                                <Image
                                     src={product.image[selectedImage]?.downloadURL}
                                     alt="Product Image"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
                                 />
                             </div>
                         </div>
