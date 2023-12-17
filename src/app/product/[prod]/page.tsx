@@ -60,7 +60,7 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
     }, [cart]);
 
     useEffect(() => {
-        if (localStorage.getItem("cart"))
+        if (localStorage.getItem("cart").length>0)
             setCart(JSON.parse(localStorage.getItem("cart")));
     }, []);
 
