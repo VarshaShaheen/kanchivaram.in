@@ -13,13 +13,13 @@ export default function Home() {
 
             <CarouselComponent />
 
-            <section className={"mt-10 mb-10 ml-5 mr-5 text-center"} id="price-cat">
-                <h1 className={"font-bold text-2xl mb-5"}>SHOP BY PRICE</h1>
+            <section className={"mt-10 mb-10 text-center"} id="price-cat">
+                <h1 className={"font-bold text-2xl mb-10 font-serif "}>SHOP BY PRICE</h1>
                 <Gallery/>
             </section>
 
             <section className={"mt-10 mb-10 ml-10 mr-10 grid grid-cols-6 w-100"} id="categories">
-                <h1 className={"font-bold text-2xl mb-5 text-center col-span-6"}>CATEGORY</h1>
+                <h1 className={"font-bold text-2xl mb-10 text-center col-span-6 font-serif"}>CATEGORY</h1>
                 <div className={"col-span-2 hidden lg:block relative rounded-lg overflow-hidden mr-6 mb-2"}>
                     <Image
                         src={"/gallery/banner-fin.jpg"}
@@ -46,7 +46,7 @@ export default function Home() {
 
 
             <section id="testimonials">
-                <h1 className={"font-bold text-2xl mb-5 text-center col-span-6"}>TESTIMONIALS</h1>
+                <h1 className={"font-bold text-2xl mb-5 text-center col-span-6 font-serif"}>TESTIMONIALS</h1>
                 <Testimonials />
             </section>
             <section id="footer">

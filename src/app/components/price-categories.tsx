@@ -5,32 +5,32 @@ const Gallery = () => {
     const images = [
         {
             src: '/price-category/1.JPG',
-            caption: '1000-5000',
+            caption: '1000 - 5000',
             destination: '/price-category/1000-5000',
         },
         {
             src: '/price-category/2.JPG',
-            caption: '5000-10000',
+            caption: '5000 - 10000',
             destination: '/price-category/5000-10000',
         },
         {
             src: '/price-category/3.JPG',
-            caption: '10000-15000',
+            caption: '10000 - 15000',
             destination: '/price-category/10000-15000',
         },
         {
             src: '/price-category/4.JPG',
-            caption: '15000-20000',
+            caption: '15000 - 20000',
             destination: '/price-category/15000-20000',
         },
         {
             src: '/price-category/2.JPG',
-            caption: '20000-25000',
+            caption: '20000 - 25000',
             destination: '/price-category/20000-25000',
         },
         {
             src: '/price-category/3.JPG',
-            caption: '25000-30000',
+            caption: '25000 - 30000',
             destination: '/price-category/25000-30000',
         },
     ];
@@ -47,11 +47,11 @@ const Gallery = () => {
                         <Image
                             src={image.src}
                             alt={image.caption}
-                            className="price-category-img hover:shadow-none"
+                            className="price-category-img "
                             width={6000}
                             height={4480}
                         />
-                        <p className="absolute inset-0 flex items-center font-bold font-serif text-white justify-center text-center line-height lg:text-xl md:text-base">
+                        <p className="absolute inset-0 flex items-center font-bold font-manrope text-white justify-center text-center line-height lg:text-xl md:text-base">
                             {image.caption}
                         </p>
                     </div>

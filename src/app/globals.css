@@ -30,6 +30,10 @@
   font-family: 'Ardilla';
   src: url('/public/fonts/Ardilla.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'manrope';
+  src: url('/public/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+}
 
 .font-ardilla {
   font-family: 'Ardilla', sans-serif;
@@ -39,6 +43,9 @@
 }
 .font-futura{
   font-family: 'Futura',sans-serif;
+}
+.font-manrope{
+  font-family: 'manrope',sans-serif;
 }
 body {
   color: black;
