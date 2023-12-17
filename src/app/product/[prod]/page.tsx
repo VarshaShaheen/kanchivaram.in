@@ -33,12 +33,24 @@ type product = {
     weight: string;
     categories: string;
 }
-
+interface CartItem {
+    id: string;
+    code: string;
+    image: { downloadURL: string }[];
+    name: string;
+    mrp: number;
+    description: string;
+    color: string;
+    fabric: string;
+    height: string;
+    weight: string;
+    categories: string;
+}
 const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
     const { prod: code } = params;
     const [product, setProduct] = useState<product | null>(null);
     const [selectedImage, setSelectedImage] = useState(0);
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState<CartItem[]>([]);
     const [notification, setNotification] = useState<string | null>(null);
 
     useEffect(() => {
@@ -60,7 +72,7 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
     }, [cart]);
 
     useEffect(() => {
-        if (localStorage.getItem("cart").length>0)
+        if (localStorage.getItem("cart"))
             setCart(JSON.parse(localStorage.getItem("cart")));
     }, []);
 
