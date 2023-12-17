@@ -38,6 +38,8 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
     const { prod: code } = params;
     const [product, setProduct] = useState<product | null>(null);
     const [selectedImage, setSelectedImage] = useState(0);
+    const [cart, setCart] = useState([]);
+    const [notification, setNotification] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -52,14 +54,40 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
         setSelectedImage(index);
     };
 
+    useEffect(() => {
+        if (cart.length > 0)
+            localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
+
+    useEffect(() => {
+        if (localStorage.getItem("cart"))
+            setCart(JSON.parse(localStorage.getItem("cart")));
+    }, []);
+
+    const addToCart = () => {
+        // Check if the product is already in the cart
+        const existingProduct = cart.find(item => item.id === product?.id);
+
+        if (existingProduct) {
+            setNotification("This product is already in your cart.");
+        } else {
+            setCart([...cart, product]);
+            setNotification("Product added to cart successfully.");
+        }
+    };
+
     if (!product) {
         return <div>Loading...</div>;
     }
 
     return (
         <>
-
-            {product.image?.length > 0 && (
+            {notification && (
+                <div className="fixed bottom-0 right-0 bg-green-500 text-white p-4 m-4 rounded">
+                    {notification}
+                </div>
+            )}
+            {product && product.image?.length > 0 && (
                 <div className="container mx-auto mt-12 lg:p-4 md:p-8 bg-white overflow-hidden max-width ">
                     <div className="md:flex md:flex-row ">
                         <div className="md:w-4/12 md:mb-0 mb-4">
@@ -135,7 +163,8 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
                                         ))}
                                     </div>
                                 </div>
-                                <button className="bg-button text-white py-2 my-5 px-4 rounded hover:bg-green-950 uppercase font-serif ">
+                                <button onClick={addToCart}
+                                        className="bg-button text-white py-2 my-5 px-4 rounded hover:bg-green-950 uppercase font-serif ">
                                     Add to Cart
                                 </button>
                             </div>

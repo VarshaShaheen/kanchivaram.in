@@ -49,13 +49,6 @@ const CategoryPage = async ({ params }: { params: { cat: string } }) => {
                                 <span className="py-1 text-sm  text-gray-600 serif font-serif uppercase mb-2">
                                     MRP: {product.mrp}
                                 </span>
-                                        <Image
-                                            src={"/cart.png"}
-                                            alt={"cart"}
-                                            width={25}
-                                            height={25}
-                                            className="cart-margin mr-0 mb-3"
-                                        />
                                     </div>
                                 </div>
                             </div>

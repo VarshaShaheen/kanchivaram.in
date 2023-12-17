@@ -5,5 +5,5 @@ const nextConfig = {
     },
 }
 
-// next.config.js
+// next.ccaronfig.js
 module.exports = nextConfig;
