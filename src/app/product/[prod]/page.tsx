@@ -84,8 +84,8 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
 
         if (existingProduct) {
             setNotification("This product is already in your cart.");
-        } else {
-            setCart([...cart, product]);
+        } else if (product !== null) {
+            setCart([...cart, product as CartItem]);
             setNotification("Product added to cart successfully.");
         }
     };
