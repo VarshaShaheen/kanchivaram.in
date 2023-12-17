@@ -3,9 +3,22 @@
 import React, { useEffect, useState } from "react";
 import Footer from "@/app/components/footer";
 import "@/app/utils/css/cart.css";
+interface CartItem {
+    id: string;
+    code: string;
+    image: { downloadURL: string }[];
+    name: string;
+    mrp: number;
+    description: string;
+    color: string;
+    fabric: string;
+    height: string;
+    weight: string;
+    categories: string;
+}
 
 const Cart = () => {
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState<CartItem[]>([]);
 
     useEffect(() => {
         const cart = localStorage.getItem("cart");
