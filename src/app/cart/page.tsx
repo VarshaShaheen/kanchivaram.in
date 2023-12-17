@@ -8,8 +8,10 @@ const Cart = () => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        if (localStorage.getItem("cart"))
-            setCart(JSON.parse(localStorage.getItem("cart")));
+        const cart = localStorage.getItem("cart");
+        if (cart !== null) {
+            setCart(JSON.parse(cart));
+        }
     }, []);
 
     const removeFromCart = (itemId) => {
