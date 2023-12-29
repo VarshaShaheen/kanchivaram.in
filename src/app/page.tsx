@@ -18,16 +18,8 @@ export default function Home() {
                 <Gallery/>
             </section>
 
-            <section className={"mt-10 mb-10 ml-10 mr-10 grid grid-cols-6 w-100"} id="categories">
+            <section className={"mt-10 mb-10 ml-10 mr-10 w-100"} id="categories">
                 <h1 className={"font-bold text-2xl mb-10 text-center col-span-6 font-serif"}>CATEGORY</h1>
-                <div className={"col-span-2 hidden lg:block relative rounded-lg overflow-hidden mr-6 mb-2"}>
-                    <Image
-                        src={"/gallery/banner-fin.jpg"}
-                        alt={"Arya"}
-                        layout="fill"
-                        objectFit="cover"
-                    />
-                </div>
                 <div id="category-gallery" className="col-span-6 lg:col-span-4">
                     <Categorygallery/>
                 </div>
