@@ -43,8 +43,11 @@
     color: #595555;
 }
 .banner-container{
-    max-height: 17rem;
-    overflow: hidden;
+    max-height: 15rem;
+    overflow-x: clip;
+    overflow-y: hidden;
+    align-items: center;
+    justify-content: center;
 }
 .size-heading{
     font-size: 30px;
@@ -93,7 +96,7 @@
         margin-left: 15px;
     }
     .mobile-banner{
-        width: 24rem;
+        width: 100vw;
     }
     .mobile-hide{
         display: none;

@@ -106,23 +106,23 @@ const settings = {
                 <Slider ref={sliderRef} {...settings}>
                     {products.map((product) => (
                         <Link href="/product/[code]" as={`/product/${product.code}`} key={product.id}>
-                        <div key={product.id} className="rounded overflow-hidden bg-white px-2 ">
-                            <div className="relative w-full h-80">
-                                <Image
-                                    className="w-full h-full object-cover absolute"
-                                    src={product.image[0].downloadURL}
-                                    alt={product.name}
-                                    width={600}
-                                    height={500}
-                                />
-                                <Image
-                                    className="w-full h-full object-cover absolute hover:opacity-100 opacity-0 transition-opacity duration-200"
-                                    src={product.image[1].downloadURL}
-                                    alt={product.name}
-                                    width={600}
-                                    height={500}
-                                />
-                            </div>
+                            <div key={product.id} className="rounded overflow-hidden bg-white px-2 ">
+                                <div className="relative w-full h-80 ">
+                                    <Image
+                                        className="w-full h-full object-cover absolute rounded-lg"
+                                        src={product.image[0].downloadURL}
+                                        alt={product.name}
+                                        width={600}
+                                        height={500}
+                                    />
+                                    <Image
+                                        className="w-full h-full object-cover absolute hover:opacity-100 opacity-0 transition-opacity duration-200 rounded-lg"
+                                        src={product.image[1].downloadURL}
+                                        alt={product.name}
+                                        width={600}
+                                        height={500}
+                                    />
+                                </div>
                             <div className="py-3">
                                 <div className="text-xl mb-2 text-gray-600 serif font-serif uppercase py-1 text-m md:text-xl">{product.name}</div>
                                 <div className="flex items-center">

@@ -101,6 +101,22 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
                     {notification}
                 </div>
             )}
+            <div className="banner-container mobile-banner mobile-hide">
+                {/* Add your banner image here */}
+                <img
+                    className="w-full object-cover"
+                    src={"/product-single/banner-desktop.jpg"}
+                    alt={"Banner Image"}
+                />
+            </div>
+            <div className="banner-container mobile-banner desktop-hide">
+                {/* Add your banner image here */}
+                <img
+                    className="w-full object-cover"
+                    src={"/product-single/banner-mobile.jpg"}
+                    alt={"Banner Image"}
+                />
+            </div>
             {product && product.image?.length > 0 && (
                 <div className="container mx-auto mt-12 lg:p-4 md:p-8 bg-white overflow-hidden max-width ">
                     <div className="md:flex md:flex-row ">
@@ -177,31 +193,26 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
                                         ))}
                                     </div>
                                 </div>
-                                <button onClick={addToCart}
-                                        className="bg-button text-white py-2 my-5 px-4 rounded hover:bg-green-950 uppercase font-serif ">
-                                    Add to Cart
-                                </button>
+                                <div className="flex flex-col sm:flex-row gap-2.5 my-5">
+                                    <div>
+                                        <button onClick={addToCart}
+                                                className="bg-button text-white py-2 px-4 rounded hover:bg-green-950 uppercase font-serif ">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+
+                                    <Link href="/cart" >
+                                        <button className="bg-button text-white py-2 px-4 rounded hover:bg-green-950 uppercase font-serif ">
+                                            View Cart
+                                        </button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             )}
-            <div className="banner-container my-10 mobile-banner mobile-hide">
-                {/* Add your banner image here */}
-                <img
-                    className="w-full object-cover"
-                    src={"/product-single/banner.jpg"}
-                    alt={"Banner Image"}
-                />
-            </div>
-            <div className="banner-container my-10 mobile-banner desktop-hide">
-                {/* Add your banner image here */}
-                <img
-                    className="w-full object-cover"
-                    src={"/product-single/banner-small.jpg"}
-                    alt={"Banner Image"}
-                />
-            </div>
+
             <CategoryGallery product={{ categories: product.categories }} />
             <div className="mt-8" id="footer">
                 <Footer />
