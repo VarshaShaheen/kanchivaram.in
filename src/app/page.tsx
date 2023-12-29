@@ -10,9 +10,9 @@ import React from "react";
 export default function Home() {
     return (
         <main className={'w-full h-full'}>
-            <marquee className="text-red-500 text-lg font-bold">Our site is under construction, so please refrain from buying
+            <h5 className="text-red-500 text-lg font-bold text-center">Our site is under construction, so please refrain from buying
                 products now.
-            </marquee>
+            </h5>
 
             <CarouselComponent/>
 
