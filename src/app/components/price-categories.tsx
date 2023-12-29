@@ -24,12 +24,12 @@ const Gallery = () => {
             destination: '/price-category/15000-20000',
         },
         {
-            src: '/price-category/2.JPG',
+            src: '/price-category/5.JPG',
             caption: '20000 - 25000',
             destination: '/price-category/20000-25000',
         },
         {
-            src: '/price-category/3.JPG',
+            src: '/price-category/6.JPG',
             caption: '25000 - 30000',
             destination: '/price-category/25000-30000',
         },
@@ -40,25 +40,26 @@ const Gallery = () => {
             {images.map((image, index) => (
                 <div
                     key={index}
-                    className=" sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-2 flex-shrink-0 "
+                    className="sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-2 flex-shrink-0 hover:scale-105 transition-transform duration-300 ease-in-out"
                 >
                     <Link href={image.destination} key={index}>
-                    <div className="relative">
-                        <Image
-                            src={image.src}
-                            alt={image.caption}
-                            className="price-category-img "
-                            width={6000}
-                            height={4480}
-                        />
-                        <p className="absolute inset-0 flex items-center font-bold font-manrope text-white justify-center text-center line-height lg:text-xl md:text-base">
-                            {image.caption}
-                        </p>
-                    </div>
+                        <div className="relative">
+                            <Image
+                                src={image.src}
+                                alt={image.caption}
+                                className="price-category-img"
+                                width={6000}
+                                height={4480}
+                            />
+                            <p className="flex items-center font-serif text-black justify-center text-center line-height lg:text-xl md:text-base">
+                                {image.caption}
+                            </p>
+                        </div>
                     </Link>
                 </div>
             ))}
         </div>
+
     );
 };
 
