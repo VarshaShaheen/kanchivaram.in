@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <main className={'w-full h-full'}>
             <h5 className="text-red-500 text-lg font-bold text-center">Our site is under construction, so please refrain from buying
-                products now.
+                products now
             </h5>
 
             <CarouselComponent/>
