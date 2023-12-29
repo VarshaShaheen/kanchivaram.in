@@ -13,7 +13,7 @@ interface CategoryGalleryItemProps {
 const CategoryGalleryItem: React.FC<CategoryGalleryItemProps> = ({ categoryName, imageUrl, categoryUrl }) => {
     return (
         <div className="mb-2 relative">
-            <Image className="object-cover" src={imageUrl} alt="Category Image" width={300} height={200} />
+            <Image className="object-cover" src={imageUrl} alt="Category Image" width={400} height={200} />
             <p className="absolute bottom-0.5 left-0.5 right-0.5 text-white text-gallery text-center font-sans ">
                 {categoryName}
             </p>

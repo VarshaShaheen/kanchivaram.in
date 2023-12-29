@@ -10,8 +10,11 @@ import React from "react";
 export default function Home() {
     return (
         <main className={'w-full h-full'}>
+            <marquee className="text-red-500 text-lg font-bold">Our site is under construction, so please refrain from buying
+                products now.
+            </marquee>
 
-            <CarouselComponent />
+            <CarouselComponent/>
 
             <section className={"mt-10 mb-10 text-center"} id="price-cat">
                 <h1 className={"font-bold text-2xl mb-10 font-serif "}>SHOP BY PRICE</h1>
@@ -39,10 +42,10 @@ export default function Home() {
 
             <section id="testimonials">
                 <h1 className={"font-bold text-2xl mb-5 text-center col-span-6 font-serif"}>TESTIMONIALS</h1>
-                <Testimonials />
+                <Testimonials/>
             </section>
             <section id="footer">
-                <Footer />
+                <Footer/>
             </section>
         </main>
     )
