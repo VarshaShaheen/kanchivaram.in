@@ -51,7 +51,7 @@ const Gallery = () => {
                                 width={6000}
                                 height={4480}
                             />
-                            <p className="flex my-2 items-center font-serif text-black justify-center text-center line-height lg:text-xl md:text-base">
+                            <p className="flex my-2 items-center text-price-category text-black justify-center text-center line-height lg:text-xl md:text-base">
                                 {image.caption}
                             </p>
                         </div>

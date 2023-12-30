@@ -26,7 +26,7 @@ const CarouselComponent = () => {
                     src="/carousel/carousel-mobile.jpg"
                     alt="Mobile view"
                     layout="fill"
-                    objectFit="contain"
+                    objectFit="cover"
                 />
             )}
         </div>
