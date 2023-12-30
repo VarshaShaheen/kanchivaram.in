@@ -37,7 +37,7 @@ const Footer = () => {
                             </li>
                             <li className="flex mt-2">
                                 <div>
-                                    <Link href="/">
+                                    <Link href="https://www.instagram.com/kanchivaram.in?igsh=MWNlOXAwOXZrb20zcA%3D%3D&utm_source=qr">
                                         <Image
                                             src="/social-icons/insta.png"
                                             className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300"
@@ -48,7 +48,7 @@ const Footer = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/">
+                                    <Link href="https://www.facebook.com/kanchivaram.in?mibextid=LQQJ4d">
                                         <Image
                                             src="/social-icons/fb.png"
                                             className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300"
@@ -59,18 +59,7 @@ const Footer = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/">
-                                        <Image
-                                            src="/social-icons/twitter.png"
-                                            className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300"
-                                            alt="Twitter"
-                                            width={28}
-                                            height={28}
-                                        />
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/">
+                                    <Link href="https://youtube.com/@kanchivaramindia-sw4sw?si=u7uMbPFlERemLCG3">
                                         <Image
                                             src="/social-icons/youtube.png"
                                             className="w-7 h-7 mr-2 grayscale hover:grayscale-0 transition duration-300"

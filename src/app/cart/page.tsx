@@ -29,7 +29,7 @@ const Cart = () => {
     const checkoutViaWhatsApp = () => {
         // Assuming you want to include product codes in the message
         const productCodes = cart.map(item => item.code).join('%0A'); // %0A represents a new line in URL encoding
-        const whatsappURL = `https://wa.me/+919846463364?text=Order%20Details%0A${productCodes}`;
+        const whatsappURL = `https://wa.me/+918921243414?text=Order%20Details%0A${productCodes}`;
 
         // Open WhatsApp in a new tab
         window.open(whatsappURL, '_blank');
