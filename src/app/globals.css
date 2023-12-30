@@ -73,13 +73,26 @@ body {
 }
 
 .text-gallery {
-  color: white;
+  color: black;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 2vh;
   font-size: 1.25rem;
-  box-shadow: black 0px 0px 8px;
-  background-color: rgba(0, 0, 0, 0.5);
+  font-family: serif;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-item{
+  border-radius: 20px;
+  box-shadow: black 0px 0px 1px;
+}
+
+.image-gallery{
+  border-radius: 20px 20px 0px 0px;
+}
+
+.gallery-overlay{
+    border-radius: 20px;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

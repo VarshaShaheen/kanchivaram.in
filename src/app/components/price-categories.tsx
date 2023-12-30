@@ -40,14 +40,14 @@ const Gallery = () => {
             {images.map((image, index) => (
                 <div
                     key={index}
-                    className="sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-2 flex-shrink-0 hover:scale-105 transition-transform duration-300 ease-in-out"
+                    className="sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-2 flex-shrink-0  "
                 >
                     <Link href={image.destination} key={index}>
                         <div className="relative">
                             <Image
                                 src={image.src}
                                 alt={image.caption}
-                                className="price-category-img"
+                                className="price-category-img hover:scale-105 transition-transform duration-300 ease-in-out"
                                 width={6000}
                                 height={4480}
                             />
