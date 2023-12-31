@@ -4,15 +4,16 @@ import Gallery from "@/app/components/price-categories";
 import Categorygallery from "@/app/components/categories";
 import Testimonials from "@/app/components/testimonials";
 import Footer from "@/app/components/footer";
+import WhatsAppWidget from "@/app/components/whatsapp";
 // import CuratorFeed from "@/app/components/instagram";
 import React from "react";
 
 export default function Home() {
     return (
         <main className={'w-full h-full'}>
-            <h5 className="text-red-500 text-lg font-bold text-center">Our site is under construction, so please refrain from buying
-                products now
-            </h5>
+            {/*<h5 className="text-red-500 text-lg font-bold text-center">Our site is under construction, so please refrain from buying*/}
+            {/*    products now*/}
+            {/*</h5>*/}
 
             <CarouselComponent/>
 
@@ -44,6 +45,11 @@ export default function Home() {
                 <h1 className={"font-bold text-2xl mb-5 text-center col-span-6 font-serif"}>TESTIMONIALS</h1>
                 <Testimonials/>
             </section>
+
+            <section id="whatsapp">
+                <WhatsAppWidget/>
+            </section>
+
             <section id="footer">
                 <Footer/>
             </section>

@@ -3,135 +3,241 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
 @font-face {
-  font-family: 'Futura';
-  src: url('/public/fonts/Futura Regular.ttf') format('truetype');
+    font-family: 'Futura';
+    src: url('/public/fonts/Futura Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Creattion Demo';
-  src: url('/public/fonts/Geraldine.ttf') format('truetype');
+    font-family: 'Creattion Demo';
+    src: url('/public/fonts/Geraldine.ttf') format('truetype');
 }
+
 /* src/app/utils/css/category.css */
 @font-face {
-  font-family: 'Ardilla';
-  src: url('/public/fonts/Ardilla.ttf') format('truetype');
+    font-family: 'Ardilla';
+    src: url('/public/fonts/Ardilla.ttf') format('truetype');
 }
+
 @font-face {
-  font-family: 'manrope';
-  src: url('/public/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+    font-family: 'manrope';
+    src: url('/public/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
 }
 
 .font-ardilla {
-  font-family: 'Ardilla', sans-serif;
+    font-family: 'Ardilla', sans-serif;
 }
-.font-geraldine{
-  font-family: 'Geraldine', sans-serif;
+
+.font-geraldine {
+    font-family: 'Geraldine', sans-serif;
 }
-.font-futura{
-  font-family: 'Futura',sans-serif;
+
+.font-futura {
+    font-family: 'Futura', sans-serif;
 }
-.font-manrope{
-  font-family: 'manrope',sans-serif;
+
+.font-manrope {
+    font-family: 'manrope', sans-serif;
 }
+
 body {
-  color: black;
-  background-color: white; /* updated */
+    color: black;
+    background-color: white; /* updated */
 }
 
-.Header-head{
-  color: #504f4f;
+.Header-head {
+    color: #504f4f;
 }
 
-.price-category-img{
-  height: 225px;
-  width: 225px;
-  object-fit: cover;
-  border-radius: 10%;
-  box-shadow: black 0px 0px 3px;
-  padding: 1px;
+.price-category-img {
+    height: 225px;
+    width: 225px;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: black 0px 0px 3px;
+    padding: 1px;
 }
+
 .gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: 'Futura', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Futura', sans-serif;
 }
 
 .text-gallery {
-  color: black;
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.25rem;
-  font-family: serif;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.25rem;
+    font-family: serif;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
-.gallery-item{
-  border-radius: 20px;
-  box-shadow: black 0px 0px 1px;
+.gallery-item {
+    border-radius: 20px;
+    box-shadow: black 0px 0px 1px;
 }
 
-.image-gallery{
-  border-radius: 20px 20px 0px 0px;
+.image-gallery {
+    border-radius: 20px 20px 0px 0px;
 }
 
-.gallery-overlay{
+.gallery-overlay {
     border-radius: 20px;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
-.line-height{
-  line-height: 1rem;
+.line-height {
+    line-height: 1rem;
 }
 
 .carouselImage {
-  position: relative;
-  width: 100%;
-  height: 200px;
-}
-.text-price-category{
-  font-family: serif;
+    position: relative;
+    width: 100%;
+    height: 200px;
 }
 
+.text-price-category {
+    font-family: serif;
+}
+
+.whatsapp-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.logo-container {
+    cursor: pointer;
+}
+
+.chat-box {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+}
+
+.chat-box.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('/whatsapp-widget/whatsappbg.jpg');
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: #3b3a3a 2px 1px 5px;
+}
+
+.whatsapp-header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    background: #075e54;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.whatsapp-kanchivaram-logo {
+    border-radius: 50%;
+    background: white;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #3f3e3e 2px 2px 5px;
+}
+
+.whatsapp-header-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    color: white;
+}
+
+.whatsapp-header-content h5 {
+    font-weight: bold;
+}
+
+.whatsapp-header-content p {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.chat-bubble{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    border-radius: 0px 10px 10px 10px;
+    background: rgba(124, 253, 163, 0.8);
+    margin: 20px;
+
+}
+.start-chat-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #075e54;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.whatsapp-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 0px 0px 20px 20px;
+}
 @media (max-width: 640px) {
-  .price-category-img {
-    width: 100px;
-    height: 100px;
-  }
-  .text-gallery {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 600px) {
-    .carouselImage {
-      height: 300px; /* Adjust as needed */
+    .price-category-img {
+        width: 100px;
+        height: 100px;
     }
-  }
+
+    .text-gallery {
+        font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+        .carouselImage {
+            height: 300px; /* Adjust as needed */
+        }
+    }
 
 }
