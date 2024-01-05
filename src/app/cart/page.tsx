@@ -3,20 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Footer from "@/app/components/footer";
 import "@/app/utils/css/cart.css";
-import GiveMeMoneyButton from "@/app/cart/GiveMeMoneyButton";
-interface CartItem {
-    id: string;
-    code: string;
-    image: { downloadURL: string }[];
-    name: string;
-    mrp: number;
-    description: string;
-    color: string;
-    fabric: string;
-    height: string;
-    weight: string;
-    categories: string;
-}
+import GiveMeMoneyButton, {CartItem} from "@/app/cart/GiveMeMoneyButton";
+
 
 const Cart = () => {
     const [cart, setCart] = useState<CartItem[]>([]);
@@ -33,12 +21,6 @@ const Cart = () => {
         setCart(updatedCart);
         localStorage.setItem("cart", JSON.stringify(updatedCart));
     };
-
-    const items =  [{
-        "itemId": "first",
-        "amount": "10",
-        "comAmt": "0"
-    }]
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -91,7 +73,7 @@ const Cart = () => {
                                     <p className="text-xs text-gray-700">including VAT</p>
                                 </div>
                             </div>
-                            <GiveMeMoneyButton items={items} consumerMobileNo="9876543210" consumerEmailId="test@test.com" />
+                            <GiveMeMoneyButton items={cart} consumerMobileNo="9876543210" consumerEmailId="test@test.com" />
                         </div>
                     </div>
                 </div>

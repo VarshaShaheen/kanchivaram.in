@@ -1,14 +1,26 @@
 import Script from "next/script";
 import React from "react";
 
+export interface CartItem {
+    id: string;
+    code: string;
+    image: { downloadURL: string }[];
+    name: string;
+    mrp: number;
+    description: string;
+    color: string;
+    fabric: string;
+    height: string;
+    weight: string;
+    categories: string;
+}
+
+
+
 export interface ButtonProps {
     consumerMobileNo: string;
     consumerEmailId: string;
-    items: {
-        itemId: string;
-        amount: string;
-        comAmt: string;
-    }[];
+    items: CartItem[];
 }
 
 const features =
@@ -40,7 +52,7 @@ export default function GiveMeMoneyButton({consumerMobileNo, consumerEmailId, it
             consumerMobileNo,
             consumerEmailId,
             "txnId": "1704448851263",   //Unique merchant transaction ID
-            items,
+            items: items.map((item) => ({itemId: item.id, amount: item.mrp, comAmt: 0})),
         }
     };
 
