@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "@/app/components/footer";
 import "@/app/utils/css/cart.css";
+import GiveMeMoneyButton from "@/app/cart/GiveMeMoneyButton";
 interface CartItem {
     id: string;
     code: string;
@@ -26,19 +27,18 @@ const Cart = () => {
             setCart(JSON.parse(cart));
         }
     }, []);
-    const checkoutViaWhatsApp = () => {
-        // Assuming you want to include product codes in the message
-        const productCodes = cart.map(item => item.code).join('%0A'); // %0A represents a new line in URL encoding
-        const whatsappURL = `https://wa.me/+918921243414?text=Order%20Details%0A${productCodes}`;
 
-        // Open WhatsApp in a new tab
-        window.open(whatsappURL, '_blank');
-    };
     const removeFromCart = (itemId: string) => {
         const updatedCart = cart.filter(item => item.id !== itemId);
         setCart(updatedCart);
         localStorage.setItem("cart", JSON.stringify(updatedCart));
     };
+
+    const items =  [{
+        "itemId": "first",
+        "amount": "10",
+        "comAmt": "0"
+    }]
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -91,12 +91,7 @@ const Cart = () => {
                                     <p className="text-xs text-gray-700">including VAT</p>
                                 </div>
                             </div>
-                            <button
-                                className="mt-4 w-full rounded-md bg-green-900 py-1.5 font-medium text-blue-50 hover:bg-black"
-                                onClick={checkoutViaWhatsApp}
-                            >
-                                Check out
-                            </button>
+                            <GiveMeMoneyButton items={items} consumerMobileNo="9876543210" consumerEmailId="test@test.com" />
                         </div>
                     </div>
                 </div>
