@@ -1,5 +1,6 @@
 import {initializeApp} from 'firebase/app';
 import {collection, getDocs, getFirestore, query, where, addDoc} from 'firebase/firestore';
+import { getFunctions, httpsCallable, connectFunctionsEmulator } from "firebase/functions";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBtWp9Gt1Mu_c78Y9m78bQC8_-wducY1Y8",
@@ -12,7 +13,18 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const functions = getFunctions(app);
+
+if (process.env.NODE_ENV === "development") {
+    connectFunctionsEmulator(functions, "localhost", 5001);
+}
+
+export const getCallBackUrl = () => process.env.NODE_ENV === "development" ? "http://127.0.0.1:5001/kanchivaram-4f387/us-central1/verifyPaymentToken" : "todo.com";
+
 export const db = getFirestore(app);
+
+export const getPaymentToken = httpsCallable(functions, 'getPaymentToken');
+export const verifyPaymentToken = httpsCallable(functions, 'verifyPaymentToken');
 
 export const fetchProductsByCategory = async (category) => {
     try {
