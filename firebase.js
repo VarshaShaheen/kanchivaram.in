@@ -1,7 +1,5 @@
 import {initializeApp} from 'firebase/app';
-import {collection, getDocs,doc,getDoc, getFirestore, query, where} from 'firebase/firestore';
-import 'firebase/firestore';
-import 'firebase/storage';
+import {collection, getDocs, getFirestore, query, where, addDoc} from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBtWp9Gt1Mu_c78Y9m78bQC8_-wducY1Y8",
@@ -12,7 +10,7 @@ const firebaseConfig = {
     appId: "1:87195945574:web:2250ba5b68260fb73a7ba7",
     measurementId: "G-JYNGNN19CX"
 };
-export default firebaseConfig;
+
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
@@ -20,8 +18,6 @@ export const fetchProductsByCategory = async (category) => {
     try {
         const q = query(collection(db, "products"), where("categories", "==", category));
         const querySnapshot = await getDocs(q);
-
-        console.log('querySnapshot', querySnapshot);
 
         return querySnapshot.docs.map((doc) => {
             const data = doc.data();
@@ -44,8 +40,6 @@ export const fetchProductData = async (code) => {
     try {
         const productDocRef = query(collection(db, "products"), where("code", "==", code));
         const productDocSnap = await getDocs(productDocRef);
-
-        console.log('productDocSnap', productDocSnap);
 
         // Check if any document matches the code
         if (productDocSnap.docs.length > 0) {
@@ -101,3 +95,15 @@ export const fetchProductsByPriceRange = async (lowerLimit, upperLimit) => {
     }
 };
 
+
+ // checkout page
+export const addOrderToFirestore = async (formData) => {
+    try {
+        const docRef = await addDoc(collection(db, 'orders'), formData);
+        console.log('Order added with ID: ', docRef.id);
+        return docRef.id;
+    } catch (e) {
+        console.error('Error adding order: ', e);
+        throw e;
+    }
+};

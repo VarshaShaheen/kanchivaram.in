@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "@/app/components/footer";
 import "@/app/utils/css/cart.css";
-import GiveMeMoneyButton, {CartItem} from "@/app/cart/GiveMeMoneyButton";
+import GiveMeMoneyButton, {CartItem} from "@/app/checkout/GiveMeMoneyButton";
 
 
 const Cart = () => {

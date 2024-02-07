@@ -39,7 +39,7 @@ export default function GiveMeMoneyButton({consumerMobileNo, consumerEmailId, it
 
     const reqJson = {
         features,
-        "consumerData": {
+        consumerData: {
             "deviceId": "WEBSH2",    //possible values "WEBSH1" or "WEBSH2"
             "token": "5f6a22f40a09a903f676214016574ae1453a37ce8675ae3958e3df133f1524df0ea2a28f80ef9d5ecf409c63d06cbbe5f80d1574d69d17c5c0ac9dca82928469",
             "returnUrl": "https://pgproxyuat.in.worldline-solutions.com/linuxsimulator/MerchantResponsePage.jsp",    //merchant response page URL
@@ -55,6 +55,8 @@ export default function GiveMeMoneyButton({consumerMobileNo, consumerEmailId, it
             items: items.map((item) => ({itemId: item.id, amount: item.mrp, comAmt: 0})),
         }
     };
+
+    // const rawToken = [T998462,].map((key) => reqJson.consumerData[key]).join("|") + "|" + salt;
 
     function takeMoney() {
         // @ts-ignore
