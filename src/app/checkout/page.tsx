@@ -1,15 +1,16 @@
-"use client";
-import GiveMeMoneyButton, { CartItem } from "@/app/checkout/GiveMeMoneyButton";
-import Footer from "@/app/components/footer";
+"use client"
 import React, { useEffect, useState } from "react";
+import GiveMeMoneyButton, { CartItem } from "@/app/checkout/GiveMeMoneyButton";
 import { addOrderToFirestore } from "../../../firebase";
 
 const Checkout = () => {
     const [cart, setCart] = useState<CartItem[]>([]);
+    const [productIds, setProductIds] = useState<string[]>([]); // Initialize productIds array
     const [formData, setFormData] = useState<FormValues>({
         name: "",
         emailId: "",
         phoneNo: "",
+        productId: "",
         addressLine1: "",
         city: "",
         state: "",
@@ -17,9 +18,12 @@ const Checkout = () => {
     });
 
     useEffect(() => {
-        const cart = localStorage.getItem("cart");
-        if (cart !== null) {
-            setCart(JSON.parse(cart));
+        const cartStorage = localStorage.getItem("cart");
+        if (cartStorage) {
+            const parsedCart = JSON.parse(cartStorage);
+            setCart(parsedCart);
+            // Populate productIds based on the items in the cart
+            setProductIds(parsedCart.map((item: CartItem) => item.id));
         }
     }, []);
 
@@ -29,16 +33,23 @@ const Checkout = () => {
         localStorage.setItem("cart", JSON.stringify(updatedCart));
     };
 
-    const handleFormSubmit = async (e: { preventDefault: () => void }) => {
+    const handleFormSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        const productIdsString = cart.map(item => item.code).join(',');
+        const submissionData = {
+            ...formData,
+            productId: productIdsString, // Ensure this is the correct field name
+        };
+
         try {
-            const orderId = await addOrderToFirestore(formData);
-            takeMoney();
+            const orderId = await addOrderToFirestore(submissionData);
+            // Assume takeMoney() is handled appropriately elsewhere
             console.log("Order placed successfully with ID:", orderId);
         } catch (error) {
             console.error("Error placing order:", error);
         }
     };
+
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -60,6 +71,7 @@ const Checkout = () => {
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                         className="w-full p-2 border rounded"
+                                        required
                                     />
                                 </div>
                                 <div className="mb-4">
@@ -70,6 +82,7 @@ const Checkout = () => {
                                         value={formData.emailId}
                                         onChange={(e) => setFormData({ ...formData, emailId: e.target.value })}
                                         className="w-full p-2 border rounded"
+                                        required
                                     />
                                 </div>
                                 <div className="mb-4">
@@ -80,6 +93,7 @@ const Checkout = () => {
                                         value={formData.phoneNo}
                                         onChange={(e) => setFormData({ ...formData, phoneNo: e.target.value })}
                                         className="w-full p-2 border rounded"
+                                        required
                                     />
                                 </div>
                                 <div className="mb-4">
@@ -90,6 +104,7 @@ const Checkout = () => {
                                         value={formData.addressLine1}
                                         onChange={(e) => setFormData({ ...formData, addressLine1: e.target.value })}
                                         className="w-full p-2 border rounded"
+                                        required
                                     />
                                 </div>
                                 <div className="mb-4">
@@ -100,6 +115,7 @@ const Checkout = () => {
                                         value={formData.city}
                                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                                         className="w-full p-2 border rounded"
+                                        required
                                     />
                                 </div>
                                 <div className="mb-4">
@@ -110,6 +126,7 @@ const Checkout = () => {
                                         value={formData.state}
                                         onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                                         className="w-full p-2 border rounded"
+                                        required
                                     />
                                 </div>
                                 <div className="mb-4">
@@ -120,6 +137,7 @@ const Checkout = () => {
                                         value={formData.country}
                                         onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                                         className="w-full p-2 border rounded"
+                                        required
                                     />
                                 </div>
                                 {/* Payment Gateway Button */}
@@ -185,11 +203,6 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Footer */}
-            <div id="footer">
-                <Footer />
-            </div>
         </div>
     );
 };
@@ -200,6 +213,7 @@ interface FormValues {
     name: string;
     emailId: string;
     phoneNo: string;
+    productId : string;
     addressLine1: string;
     city: string;
     state: string;

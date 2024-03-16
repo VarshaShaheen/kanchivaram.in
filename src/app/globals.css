@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: 'Futura';
-    src: url('/public/fonts/Futura Regular.ttf') format('truetype');
+    src: url('/public/fonts/Futura_Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -53,6 +53,10 @@
     font-family: 'manrope', sans-serif;
 }
 
+
+
+
+
 body {
     color: black;
     background-color: white; /* updated */
@@ -60,6 +64,12 @@ body {
 
 .Header-head {
     color: #504f4f;
+}
+
+.carousel-background {
+    background-size: cover;
+    background-position: center;
+    background-image: url('/carousel/carousel-desktop.jpg');
 }
 
 .price-category-img {
@@ -94,10 +104,13 @@ body {
 .gallery-item {
     border-radius: 20px;
     box-shadow: black 0px 0px 1px;
+    margin: 1rem;
 }
 
 .image-gallery {
     border-radius: 20px 20px 0px 0px;
+    width: 300px;
+    height: 300px;
 }
 
 .gallery-overlay {
@@ -224,7 +237,73 @@ body {
     background: #ffffff;
     border-radius: 0px 0px 20px 20px;
 }
+
+.testimonial-image-container {
+    width: 500px; /* Default size for non-mobile devices */
+    height: 500px;
+}
+
+/* globals.css */
+/* Base styles for the nav, ensuring it looks good on all devices */
+nav.bg-white {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav . div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Improved spacing and centering for mobile menu */
+.md.flex-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Adds more space between each link */
+    align-items: center; /* Centers items horizontally */
+}
+
+/* Ensure menu links are visually distinct and easy to tap on mobile */
+nav .flex-1 ul li {
+    margin-bottom: 0.5rem; /* Add space between menu items */
+    width: 100%; /* Full width links for easier tapping */
+}
+
+nav .flex-1 ul li a {
+    display: block; /* Makes the whole area of the link clickable */
+    padding: 0.75rem; /* Larger tap area and more space around the text */
+    border-radius: 0.375rem; /* Softens the corners for a modern look */
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Keeps text color consistent */
+}
+
+/* Hover and focus styles for links */
+nav .flex-1 ul li a:hover,
+nav .flex-1 ul li a:focus {
+    background-color: #f0f0f0; /* Light background on hover/focus for feedback */
+}
+
+/* Cart icon adjustments */
+nav .flex-1 ul li:last-child {
+    display: flex;
+    justify-content: center; /* Center the cart icon */
+    width: 100%; /* Full width to align with other menu items */
+}
+
 @media (max-width: 640px) {
+
+    nav .flex-1 ul {
+        flex-direction: column; /* Keep it vertical on mobile */
+        gap: 1rem; /* Maintain spacing */
+    }
+
+    nav .flex-1 ul li {
+        /* No need to reset margin-bottom here since it's already handled outside the media query */
+    }
+
+    .carousel-background {
+        background-image: url('/carousel/carousel-mobile.jpg');
+    }
+
     .price-category-img {
         width: 100px;
         height: 100px;
@@ -232,6 +311,16 @@ body {
 
     .text-gallery {
         font-size: 1rem;
+    }
+    .gallery-item{
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 1vh;
+    }
+
+    .testimonial-image-container {
+        width: 100%; /* Make it full width on mobile devices */
+        height: 300px; /* Adjust height for mobile devices */
     }
 
     @media (max-width: 600px) {

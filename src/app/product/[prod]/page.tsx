@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { fetchProductData } from '../../../../firebase';
-import Footer from '@/app/components/footer';
 import "@/app/utils/css/product.css";
 import Link from 'next/link';
 import CategoryGallery from '@/app/components/single-category';
@@ -214,9 +213,6 @@ const SingleProductDescription = ({ params }: { params: { prod: string } }) => {
             )}
 
             <CategoryGallery product={{ categories: product.categories }} />
-            <div className="mt-8" id="footer">
-                <Footer />
-            </div>
         </>
     );
 };

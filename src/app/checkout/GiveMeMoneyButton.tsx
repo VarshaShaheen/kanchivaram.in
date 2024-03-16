@@ -60,7 +60,7 @@ function getConsumerData(consumerMobileNo: string, consumerEmailId: string, item
         consumerMobileNo,
         consumerEmailId,
         items: items.map((item) => ({
-            itemId: item.id,
+            itemId: 'FIRST',
             amount: String(item.mrp),
             comAmt: "0",
         }))
@@ -73,6 +73,7 @@ export default function GiveMeMoneyButton({
     consumerEmailId,
     items,
 }: ButtonProps) {
+
 
     async function takeMoney() {
         const csData = getConsumerData(consumerMobileNo, consumerEmailId, items);
@@ -101,6 +102,7 @@ export default function GiveMeMoneyButton({
                     src="https://www.paynimo.com/paynimocheckout/server/lib/checkout.js"></Script>
 
             <button
+                type="submit"
                 className="mt-4 w-full rounded-md bg-green-900 py-1.5 font-medium text-blue-50 hover:bg-black"
                 onClick={takeMoney}
             >

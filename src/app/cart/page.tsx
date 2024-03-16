@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Footer from "@/app/components/footer";
 import "@/app/utils/css/cart.css";
-import GiveMeMoneyButton, {CartItem} from "@/app/checkout/GiveMeMoneyButton";
+import {CartItem} from "@/app/checkout/GiveMeMoneyButton";
+import Link from 'next/link';
 
 
 const Cart = () => {
@@ -73,13 +73,15 @@ const Cart = () => {
                                     <p className="text-xs text-gray-700">including VAT</p>
                                 </div>
                             </div>
-                            <GiveMeMoneyButton items={cart} consumerMobileNo="9876543210" consumerEmailId="test@test.com" />
+                            <Link href="/checkout">
+                                <button
+                                    className="mt-4 w-full rounded-md bg-green-900 py-1.5 font-medium text-blue-50 hover:bg-black">
+                                    Checkout
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="footer">
-                <Footer />
             </div>
         </div>
     );

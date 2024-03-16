@@ -1,5 +1,6 @@
 import {HttpsError, onCall, onRequest} from "firebase-functions/v2/https";
 import * as Crypto from "crypto";
+import {setGlobalOptions} from "firebase-functions/v2";
 
 const keys = [
     "merchantId",
@@ -21,11 +22,13 @@ const keys = [
     "salt"
 ];
 
-const salt = ""; // TODO: Everything tastes better with a little salt
+const salt = `${process.env.SALT}`; // TODO: Everything tastes better with a little salt
+
+setGlobalOptions({maxInstances: 10})
 
 export const getPaymentToken = onCall((request) => {
     request.data["salt"] = salt;
-    request.data["txnId"] = Math.random().toString(36).substring(7); // TODO: Should probably ne a little more cryptic
+    request.data["txnId"] = Math.random().toString(36).substring(7); // TODO: Should probably be a little more cryptic
 
     for(const key of keys)
         if (request.data[key] === undefined || request.data[key] === null)
@@ -39,6 +42,7 @@ export const getPaymentToken = onCall((request) => {
 
 export const verifyPaymentToken = onRequest ((request, response) => {
     const msg = request.body["msg"];
+    console.log(msg)
     const parts = msg.split("|");
     const hash = parts.pop();
 
@@ -58,5 +62,5 @@ export const verifyPaymentToken = onRequest ((request, response) => {
     }
 
     //  TODO: Should either buy example.com or change this
-    response.redirect("https://www.example.com?status=" + status + "&mobile=" + mobile);
+    response.redirect("https://www.kanchivaram.in/confirmation?status=" + status + "&mobile=" + mobile);
 });

@@ -119,3 +119,19 @@ export const addOrderToFirestore = async (formData) => {
         throw e;
     }
 };
+
+export const fetchOrdersByMobile = async (mobile) => {
+    const ordersRef = collection(db, "orders");
+    const q = query(ordersRef, where("mobile", "==", mobile));
+    try {
+        const querySnapshot = await getDocs(q);
+        const orders = [];
+        querySnapshot.forEach((doc) => {
+            orders.push({ id: doc.id, ...doc.data() });
+        });
+        return orders;
+    } catch (error) {
+        console.error("Error fetching orders: ", error);
+        throw error;
+    }
+};

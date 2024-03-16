@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/app/components/footer";
 import Image from 'next/image'
 import "@/app/utils/css/terms.css";
 
@@ -58,9 +57,6 @@ const silkCare = () => {
                     </p>
                     <h5 className="pt-7 text-green-950 text-2xl text-center mb-10 mt-6"> Elegance. Tradition. <a href="https://www.kanchivaram.in" className="color-green">Kanchivaram.in</a>.</h5>
                 </div>
-            </div>
-            <div id="footer">
-                <Footer/>
             </div>
         </div>
     );

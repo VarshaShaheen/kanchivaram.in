@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/app/components/footer";
 import Image from 'next/image'
 import "@/app/utils/css/about.css";
 
@@ -22,9 +21,6 @@ const AboutUs = () => {
                         +91 8921243414 (whatsapp)
                     </p>
                 </div>
-            </div>
-            <div id="footer">
-                <Footer/>
             </div>
         </div>
     );

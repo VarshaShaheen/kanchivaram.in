@@ -1,6 +1,5 @@
 import React from "react";
 import { fetchProductsByCategory } from "../../../../firebase";
-import Footer from "@/app/components/footer";
 import Image from 'next/image'
 import Link from "next/link";
 import "@/app/utils/css/category.css";
@@ -54,9 +53,6 @@ const CategoryPage = async ({ params }: { params: { cat: string } }) => {
                             </div>
                         </Link>
                     ))}
-                </div>
-                <div className="mt-8" id="footer">
-                    <Footer/>
                 </div>
             </div>
         );

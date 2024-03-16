@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import {fetchProductsByPriceRange} from "../../../../firebase";
-import Footer from "@/app/components/footer";
 import Image from 'next/image'
 import "@/app/utils/css/category.css";
 import Link from "next/link";
@@ -62,9 +61,6 @@ const PricePage = async ({ params }: { params: { price: string } }) =>{
                     </div>
                     </Link>
                 ))}
-            </div>
-            <div className="mt-8" id="footer">
-                <Footer />
             </div>
         </div>
     );

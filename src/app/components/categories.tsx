@@ -29,7 +29,7 @@ const CategoryGalleryItem: React.FC<CategoryGalleryItemProps> = ({ categoryName,
 const CategoryGallery = () => {
     return (
         <div className="gallery">
-            <div className="grid m-0 grid-cols-1 grid-rows-1 lg:grid-cols-3 gap-2">
+            <div className="grid m-0 grid-cols-1 grid-rows-1 lg:grid-cols-3 ">
                 {CATEGORIES.map((category, i) => (
                     <CategoryGalleryItem key={i} categoryName={category.name} imageUrl={category.image.src} categoryUrl={category.url} />
                 ))}
